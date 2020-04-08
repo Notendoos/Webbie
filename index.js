@@ -22,7 +22,7 @@ client.on('message', msg =>{
                 
                 const command = newFiles.find(el => el == validate.command(msg))
                 try{
-                    command ? require(`${mainDir}/${command}`)(client,msg) : msg.channel.send('Sorry, I didn\'t quite get what you mean!')
+                    command == 'help' ? require(`${mainDir}/${command}`).init(client,msg,newFiles) : command ? require(`${mainDir}/${command}`).init(client,msg) : msg.channel.send('Sorry, I didn\'t quite get what you mean!')
                 }catch(err){
                     console.log(err)
                     msg.channel.send('Oops! looks like my wires are al discombobulated. Ask for help from these monkeys ')
