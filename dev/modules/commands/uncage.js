@@ -1,5 +1,5 @@
-function uncage(){
+function init(){
 
 }
 
-module.exports = {uncage}
+module.exports = init
