@@ -15,7 +15,6 @@ function command(msg){
     const content = msg.content
     const contentArr = content.split('webbie ')
     if(contentArr.length == 1){
-        msg.channel.send('Hi I\'m Webbie!')
         return false
     }else{
         return contentArr[1].split(' ')[0]
