@@ -13,7 +13,7 @@ client.on('ready',()=>{
 client.on('message', msg =>{
     if(msg.author.id != client.user.id){
         console.log(validate.message(msg))
-        validate.message(msg) && console.log(validate.command(msg).split(' ')[0])
+        validate.message(msg) && validate.command(msg)
     }
 })
 
