@@ -1,6 +1,6 @@
-function code(msg){
+function init(client,msg){
     const content = msg.content.split('webbie format')
     msg.channel.send(`\`\`\`${lang}\n${code}\n\`\`\``)
 }
 
-module.exports = {code}
+module.exports = {init, desc:'I format code to markdown!'}
