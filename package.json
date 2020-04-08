@@ -25,10 +25,14 @@
   },
   "homepage": "https://github.com/Senpaizuri/Webbie#readme",
   "dependencies": {
-    "discord.js": "^12.1.1"
+    "discord.js": "^12.1.1",
+    "module-alias": "^2.2.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
     "dotenv": "^8.2.0"
+  },
+  "_moduleAliases": {
+    "@dev": "./dev/modules"
   }
 }
