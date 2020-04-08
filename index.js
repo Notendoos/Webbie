@@ -12,9 +12,16 @@ client.on('ready',()=>{
 
 client.on('message', msg =>{
     if(msg.author.id != client.user.id){
-        validate.message(msg) && validate.command(msg)
+        if(validate.message(msg)){
+            try{
+                const command = require(`@dev/commands/${validate.command(msg)}`)
+                command.init(msg)
+            }catch(err){
+                console.log(err)
+            }
+        }
+    
     }
 })
 
 client.login(token)
-
