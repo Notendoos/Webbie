@@ -26,7 +26,8 @@
   "homepage": "https://github.com/Senpaizuri/Webbie#readme",
   "dependencies": {
     "discord.js": "^12.1.1",
-    "module-alias": "^2.2.2"
+    "module-alias": "^2.2.2",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
