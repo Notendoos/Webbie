@@ -14,7 +14,7 @@ client.on('ready',()=>{
 
 client.on('message', msg =>{
     if(msg.author.id != client.user.id){
-        if(validate.message(msg)[0] !== 0){
+        if(validate.message(msg)[0] !== 0 && validate.message(msg) !== false){
             fs.readdir(mainDir,(err,files)=>{
                 const newFiles = files.map(file=>
                     file.split('.js')[0]
@@ -25,7 +25,7 @@ client.on('message', msg =>{
                     command ? require(`${mainDir}/${command}`)(client,msg) : msg.channel.send('Sorry, I didn\'t quite get what you mean!')
                 }catch(err){
                     console.log(err)
-                    msg.channel.send('Oops! looks like my wires are al discombobulated')
+                    msg.channel.send('Oops! looks like my wires are al discombobulated. Ask for help from these monkeys ')
                 }
             })
         }
