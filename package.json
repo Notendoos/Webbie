@@ -4,6 +4,7 @@
   "description": "Discord bot for Minor Web",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,10 +25,10 @@
   },
   "homepage": "https://github.com/Senpaizuri/Webbie#readme",
   "dependencies": {
-    "discord.js": "^12.1.1",
-    "nodemon": "^2.0.2"
+    "discord.js": "^12.1.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.2",
     "dotenv": "^8.2.0"
   }
 }
