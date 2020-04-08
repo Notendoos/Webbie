@@ -21,7 +21,7 @@ client.on('message', msg =>{
                 )
                 
                 const command = newFiles.find(el => el == validate.command(msg))
-                command ? require(`${mainDir}/${command}`)(msg) : msg.channel.send('Sorry, I didn\'t quite get what you mean!')
+                command ? require(`${mainDir}/${command}`)(client,msg) : msg.channel.send('Sorry, I didn\'t quite get what you mean!')
             })
         }
     }
