@@ -25,7 +25,7 @@ client.on('message', msg =>{
                     command ? require(`${mainDir}/${command}`)(client,msg) : msg.channel.send('Sorry, I didn\'t quite get what you mean!')
                 }catch(err){
                     console.log(err)
-                    msg.channel.send('Oops! looks like the wires are al discombobulated')
+                    msg.channel.send('Oops! looks like my wires are al discombobulated')
                 }
             })
         }
