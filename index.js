@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg =>{
     if(msg.author.id != client.user.id){
-        if(validate.message(msg)){
+        if(validate.message(msg)[0] !== 0){
             try{
                 const command = require(`@dev/commands/${validate.command(msg)}`)
                 command.init(msg)
@@ -20,7 +20,6 @@ client.on('message', msg =>{
                 console.log(err)
             }
         }
-    
     }
 })
 
