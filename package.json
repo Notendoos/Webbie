@@ -1,0 +1,33 @@
+{
+  "name": "webbie",
+  "version": "1.0.0",
+  "description": "Discord bot for Minor Web",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Senpaizuri/Webbie.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "js",
+    "node"
+  ],
+  "author": "Senpaizuri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Senpaizuri/Webbie/issues"
+  },
+  "homepage": "https://github.com/Senpaizuri/Webbie#readme",
+  "dependencies": {
+    "discord.js": "^12.1.1",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
