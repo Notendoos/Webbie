@@ -1,4 +1,4 @@
-const {Command} = require("../command")
+const {Command} = require("../command");
 
 class TestCommand extends Command {
 
@@ -10,9 +10,10 @@ class TestCommand extends Command {
         return "Test command"
     }
 
-    consume(msg){
+    consume(msg) {
         msg.channel.send('Testing 1 2 3... Is this on?')
+            .then(r => console.debug("Send message! response: " + r));
     }
 }
 
-module.exports = TestCommand
+module.exports = TestCommand;

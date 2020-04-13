@@ -1,19 +1,19 @@
 const {Command} = require("../command");
 
-class UncageCommand extends Command {
+class EchoCommand extends Command {
 
     getMatcher() {
-        return "uncage"
+        return "netflix"
     }
 
     getDescription() {
-        return "Uncage command"
+        return "You know what"
     }
 
     consume(msg) {
-        msg.channel.send("CAGE!")
+        msg.channel.send("and chill?")
             .then(r => console.debug("Send message! response: " + r));
     }
 }
 
-module.exports = UncageCommand;
+module.exports = EchoCommand;

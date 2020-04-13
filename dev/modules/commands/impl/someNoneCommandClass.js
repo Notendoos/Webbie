@@ -1,18 +1,17 @@
-
 // Shouldn't break any class loader shit
 class StupidClass {
 
-  getMatcher() {
-    return "uncage"
-  }
+    getMatcher() {
+        return "no"
+    }
 
-  getDescription() {
-    return "Uncage command"
-  }
+    getDescription() {
+        return "no"
+    }
 
-  consume(msg){
-    return "CAGE!"
-  }
+    consume(msg) {
+        return "no"
+    }
 }
 
-module.exports = StupidClass
+module.exports = StupidClass;
