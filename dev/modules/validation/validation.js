@@ -19,7 +19,6 @@ function command(msg){
     }else{
         return contentArr[1].split(' ')[0]
     }
-
 }
 
 module.exports = {message,command}
