@@ -11,7 +11,7 @@ class TestCommand extends Command {
     }
 
     consume(msg){
-        return 'Testing 1 2 3... Is this on?'
+        msg.channel.send('Testing 1 2 3... Is this on?')
     }
 }
 
