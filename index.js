@@ -1,35 +1,33 @@
-require('dotenv').config()
-require('module-alias/register')
-const discord = require('discord.js')
-const client = new discord.Client()
-const token = process.env.TOKEN
-const keepAlive = require('@dev/util/keepAlive')
-const validate = require('@dev/validation/validation')
-const fs = require('fs')
-const mainDir = './dev/modules/commands'
+require('dotenv').config();
+require('module-alias/register');
+const discord = require('discord.js');
+const Router = require("./router.js");
 
-client.on('ready',()=>{
-    console.log('We\'re in bois')
-})
+const botPrefix = 'webbie';
 
-client.on('message', msg =>{
-    if(msg.author.id != client.user.id){
-        if(validate.message(msg)[0] !== 0 && validate.message(msg) !== false){
-            fs.readdir(mainDir,(err,files)=>{
-                const newFiles = files.map(file=>
-                    file.split('.js')[0]
-                )
-                
-                const command = newFiles.find(el => el == validate.command(msg))
-                try{
-                    command == 'help' ? require(`${mainDir}/${command}`).init(client,msg,newFiles) : command ? require(`${mainDir}/${command}`).init(client,msg) : msg.channel.send('Sorry, I didn\'t quite get what you mean!')
-                }catch(err){
-                    console.log(err)
-                    msg.channel.send('Oops! looks like my wires are al discombobulated. Ask for help from these monkeys ')
-                }
-            })
+const client = new discord.Client();
+const messageRouter = new Router();
+
+// matches everything starting with 'webbie'
+const botMessageMatcher = new RegExp(`\\s*${botPrefix}(?!\\w)(\\s+(\\w.*)|\\s*)`);
+
+client.on('ready', () => {
+    console.log("=== We're in bois")
+});
+
+client.on('message', (msg) => {
+    if (msg.author.id !== client.user.id) {
+        msg.content = msg.content.toLowerCase(); // normalize
+
+        if (msg.content.search(botMessageMatcher) !== -1) {
+            msg.content = msg.content.replace(botMessageMatcher, "$2");
+            messageRouter.route(msg)
         }
     }
-})
+});
 
-client.login(token)
+client.login(process.env.TOKEN).then(r => {
+    console.debug(`=== Logged In (${r})`)
+});
+
+

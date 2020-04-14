@@ -1,25 +1,25 @@
-function message(msg){
-    const check = msg.content.toLowerCase().match('webbie')
-    if(check != null){
-        if(check['index'] == 0){
+function message(msg) {
+    const check = msg.content.toLowerCase().match('webbie');
+    if (check != null) {
+        if (check['index'] == 0) {
             return check
-        }else{
+        } else {
             return false
         }
-    }else{
+    } else {
         return false
     }
 }
 
-function command(msg){
-    const content = msg.content
-    const contentArr = content.split('webbie ')
-    if(contentArr.length == 1){
+function command(msg) {
+    const content = msg.content;
+    const contentArr = content.split('webbie ');
+    if (contentArr.length == 1) {
         return false
-    }else{
+    } else {
         return contentArr[1].split(' ')[0]
     }
 }
 
-module.exports = {message,command}
+module.exports = {message, command};
 
